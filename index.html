@@ -62,19 +62,24 @@
     <h4>Created by Archie Dylan Ramadhan - 11211015</h4>
     <table id="calcu">
       <tr>
-        <td colspan="4" style="margin: auto;">
+        <td colspan="3" style="margin: auto;">
           <input type="text" id="result" value="">
         </td>
-      </tr>
-      <tr>
-        <td><input type="button" id="divide" onclick="setInput('%')" value="%"></td>
-        <td><input type="button" id="divide" onclick="setInput('/')" value="/"></td>
-        <td><input type="button" value="C" onclick="clearInput()"></td>
         <td>
           <button id="divide" onclick="deleteRes()">
             <i class="fa-solid fa-delete-left"></i>
           </button>
         </td>
+      </tr>
+      <tr>
+        <td><input type="button" id="modulus" onclick="setInput('%')" value="%"></td>
+        <td>
+          <button id="power" onclick="setInput('**')">
+            X<sup>2</sup>
+          </button>
+        </td>
+        <td><input type="button" value="C" onclick="clearInput()"></td>
+        <td><input type="button" id="divide" onclick="setInput('/')" value="/"></td>
       </tr>
       <tr>
         <td><input type="button" id="button1" onclick="setInput('1')" value="1"></td>
@@ -96,8 +101,8 @@
       </tr>
       <tr>
         <td><input type="button" id="button0" onclick="setInput('0')" value="0"></td>
-        <td><input type="button" id="comma" onclick="setInput('.')" value="."></td>
         <td><input type="button" id="button0" onclick="setInput('00')" value="00"></td>
+        <td><input type="button" id="comma" onclick="setInput('.')" value="."></td>
         <td><input type="button" id="calculate" onclick="calculate()" value="="></td>
       </tr>
     </table>

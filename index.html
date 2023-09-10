@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HTML Calculator</title>
+
+  <!-- For styling -->\
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    table {
+      border: 1px solid black;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input[type="button"] {
+      width: 100%;
+      padding: 20px 40px;
+      background-color: #323E4A;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 20px 40px;
+      background-color: #323E4A;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input[type="text"] {
+      margin: 0px 20px;
+      padding: 20px 30px;
+      font-size: 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      border: 2px solid black;
+    }
+
+    input[type="button"]:hover {
+      background-color: #28313a;
+    }
+    
+    button:hover {
+      background-color: #28313a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div style="margin:auto; width:80%;text-align: center;">
+    <h1>CALCULATOR</h1>
+    <h4>Created by Archie Dylan Ramadhan - 11211015</h4>
+    <table id="calcu">
+      <tr>
+        <td colspan="4" style="margin: auto;">
+          <input type="text" id="result" value="">
+        </td>
+      </tr>
+      <tr>
+        <td><input type="button" id="divide" onclick="setInput('%')" value="%"></td>
+        <td><input type="button" id="divide" onclick="setInput('/')" value="/"></td>
+        <td><input type="button" value="C" onclick="clearInput()"></td>
+        <td>
+          <button id="divide" onclick="deleteRes()">
+            <i class="fa-solid fa-delete-left"></i>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td><input type="button" id="button1" onclick="setInput('1')" value="1"></td>
+        <td><input type="button" id="button2" onclick="setInput('2')" value="2"></td>
+        <td><input type="button" id="button3" onclick="setInput('3')" value="3"></td>
+        <td><input type="button" id="multiple" onclick="setInput('*')" value="*"></td>
+      </tr>
+      <tr>
+        <td><input type="button" id="button4" onclick="setInput('4')" value="4"></td>
+        <td><input type="button" id="button5" onclick="setInput('5')" value="5"></td>
+        <td><input type="button" id="button6" onclick="setInput('6')" value="6"></td>
+        <td><input type="button" id="sub" onclick="setInput('-')" value="-"></td>
+      </tr>
+      <tr>
+        <td><input type="button" id="button7" onclick="setInput('7')" value="7"></td>
+        <td><input type="button" id="button8" onclick="setInput('8')" value="8"></td>
+        <td><input type="button" id="button9" onclick="setInput('9')" value="9"></td>
+        <td><input type="button" id="sum" onclick="setInput('+')" value="+"></td>
+      </tr>
+      <tr>
+        <td><input type="button" id="button0" onclick="setInput('0')" value="0"></td>
+        <td><input type="button" id="comma" onclick="setInput('.')" value="."></td>
+        <td><input type="button" id="button0" onclick="setInput('00')" value="00"></td>
+        <td><input type="button" id="calculate" onclick="calculate()" value="="></td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    const setInput = (params) => {
+      console.log(params)
+      let res = document.getElementById("result")
+      res.value = res.value + params
+    }
+
+    const clearInput = () => {
+      let res = document.getElementById("result").value = ""
+    }
+
+    const calculate = () => {
+      let res = document.getElementById("result")
+      res.value = eval(res.value)
+    }
+
+    const deleteRes = () => {
+      let res = document.getElementById("result")
+      res.value = res.value.slice(0, -1);
+
+    }
+
+  </script>
+</body>
+
+</html>
